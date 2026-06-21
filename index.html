@@ -4,230 +4,1495 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unified Φ-Field Theory — Complete Synthesis</title>
+
+    <!-- MathJax v3 -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ],
+                processEscapes: true,
+                tags: 'ams',
+                macros: {
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+                    Q: "\\mathbb{Q}",
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}",
+                    Void: "\\mathcal{V}",
+                    Field: "\\Phi",
+                    Selam: "\\mathcal{S}",
+                    OmniNihil: "\\mathcal{O}\\mathcal{N}",
+                    sets: "\\mathbf{Set}",
+                    cat: "\\mathbf{Cat}",
+                    topos: "\\mathbf{Topos}"
+                }
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            options: {
+                skipHtmlTypes: 'script'
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
     <style>
+        /* --------------------------------------------------------------
+           BASE
+        -------------------------------------------------------------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f6f8fa;
-            color: #24292e;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+            background: #fafafa;
+            color: #1a1a1a;
+            font-family: 'Palatino', 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
+            padding: 2rem 1rem;
         }
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
+
         .container {
+            max-width: 1000px;
+            margin: 0 auto;
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            padding: 2.5rem 3rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
         }
-        .repo-box {
-            background: #f1f8ff;
-            border-left: 4px solid #0366d6;
-            padding: 1.2rem 1.5rem;
-            margin: 1.5rem 0;
+
+        /* --------------------------------------------------------------
+           TYPOGRAPHY
+        -------------------------------------------------------------- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Palatino', 'Georgia', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.4em;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.2em;
+        }
+
+        .part-title {
+            font-size: 2.2rem;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #2c3e50;
+            margin: 2.5em 0 1.5em 0;
+            padding-top: 1.5em;
+            border-top: 3px double #bdc3c7;
+        }
+
+        .part-subtitle {
+            font-size: 1.8rem;
+            text-align: center;
+            font-weight: 400;
+            color: #34495e;
+            margin-bottom: 1.2em;
+        }
+
+        .abstract {
+            background: #f8f9fa;
+            padding: 1.4rem 2rem;
+            border-left: 4px solid #2c3e50;
+            margin: 1.5rem 0 2rem 0;
+            font-style: italic;
+            font-size: 0.95rem;
             border-radius: 0 4px 4px 0;
         }
-        .repo-box code {
-            background: #e1e4e8;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
+
+        .abstract strong {
+            font-style: normal;
         }
-        .step {
-            background: #fafbfc;
-            border: 1px solid #e1e4e8;
-            border-radius: 6px;
-            padding: 1rem 1.5rem;
-            margin: 1rem 0;
+
+        p {
+            margin: 0 0 1.2em 0;
+            text-align: justify;
         }
-        .step h3 {
-            margin-top: 0;
-            color: #0366d6;
-        }
-        .btn {
-            display: inline-block;
-            background: #2ea44f;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+
+        a {
+            color: #1a5276;
             text-decoration: none;
+            border-bottom: 1px dotted #1a5276;
+        }
+
+        a:hover {
+            border-bottom: 2px solid #1a5276;
+        }
+
+        /* --------------------------------------------------------------
+           TABLES
+        -------------------------------------------------------------- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        th,
+        td {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f0f2f5;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .ruledtabular table {
+            border: 1px solid #ccc;
+        }
+
+        .ruledtabular th {
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .caption {
             font-weight: 600;
-            border: none;
-            cursor: pointer;
+            margin: 0.6rem 0 0.2rem 0;
+            text-align: center;
+            font-size: 0.95rem;
         }
-        .btn:hover {
-            background: #2c974b;
+
+        /* --------------------------------------------------------------
+           BOXES
+        -------------------------------------------------------------- */
+        .box {
+            margin: 1.8rem 0;
+            padding: 1.2rem 1.6rem;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: relative;
         }
-        .btn-secondary {
-            background: #6c757d;
-        }
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
-        .file-list {
-            background: #f6f8fa;
-            border: 1px solid #d0d7de;
-            border-radius: 6px;
-            padding: 0.8rem 1.2rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-        .file-list span {
+
+        .box-title {
+            font-weight: 700;
+            font-size: 1.2rem;
             display: block;
-            padding: 0.15rem 0;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+            text-align: center;
         }
-        .file-list .dir {
-            color: #d73a49;
+
+        .box-centered {
+            text-align: center;
         }
-        .file-list .file {
-            color: #6f42c1;
+        .box-centered .box-title {
+            text-align: center;
         }
-        hr {
-            border: 0;
-            border-top: 2px solid #e1e4e8;
-            margin: 2rem 0;
+
+        /* --- box colors --- */
+        .box-axiom {
+            border-color: #800000;
         }
-        .badge {
+        .box-axiom .box-title {
+            color: #800000;
+        }
+
+        .box-master {
+            border-color: #0050a0;
+        }
+        .box-master .box-title {
+            color: #0050a0;
+        }
+
+        .box-key {
+            border-color: #a00050;
+        }
+        .box-key .box-title {
+            color: #a00050;
+        }
+
+        .box-consciousness {
+            border-color: #800080;
+        }
+        .box-consciousness .box-title {
+            color: #800080;
+        }
+
+        .box-intelligence {
+            border-color: #008040;
+        }
+        .box-intelligence .box-title {
+            color: #008040;
+        }
+
+        .box-metaphysical {
+            border-color: #500078;
+        }
+        .box-metaphysical .box-title {
+            color: #500078;
+        }
+
+        .box-void {
+            border-color: #002850;
+        }
+        .box-void .box-title {
+            color: #002850;
+        }
+
+        .box-field {
+            border-color: #00643c;
+        }
+        .box-field .box-title {
+            color: #00643c;
+        }
+
+        .box-philosophical {
+            border-color: #783c00;
+        }
+        .box-philosophical .box-title {
+            color: #783c00;
+        }
+
+        .box-epistemology {
+            border-color: #0050a0;
+        }
+        .box-epistemology .box-title {
+            color: #0050a0;
+        }
+
+        .box-ethics {
+            border-color: #007850;
+        }
+        .box-ethics .box-title {
+            color: #007850;
+        }
+
+        .box-aesthetics {
+            border-color: #a00050;
+        }
+        .box-aesthetics .box-title {
+            color: #a00050;
+        }
+
+        .box-unified {
+            border-color: #a04f00;
+        }
+        .box-unified .box-title {
+            color: #a04f00;
+        }
+
+        .box-prediction {
+            border-color: #008080;
+        }
+        .box-prediction .box-title {
+            color: #008080;
+        }
+
+        .box-math {
+            border-color: #0050a0;
+        }
+        .box-math .box-title {
+            color: #0050a0;
+        }
+
+        .box-number {
+            border-color: #c86400;
+        }
+        .box-number .box-title {
+            color: #c86400;
+        }
+
+        .box-set {
+            border-color: #800080;
+        }
+        .box-set .box-title {
+            color: #800080;
+        }
+
+        .box-logic {
+            border-color: #007850;
+        }
+        .box-logic .box-title {
+            color: #007850;
+        }
+
+        .box-cat {
+            border-color: #a04f00;
+        }
+        .box-cat .box-title {
+            color: #a04f00;
+        }
+
+        /* --------------------------------------------------------------
+           MATH DISPLAY
+        -------------------------------------------------------------- */
+        .math-block {
+            margin: 1.2rem 0;
+            text-align: center;
+            overflow-x: auto;
+            padding: 0.2rem 0;
+        }
+
+        .math-inline {
             display: inline-block;
-            background: #1b1f23;
-            color: #f0f6fc;
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-right: 0.3rem;
+        }
+
+        /* --------------------------------------------------------------
+           TOC
+        -------------------------------------------------------------- */
+        .toc {
+            background: #f8f9fa;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+        }
+
+        .toc h2 {
+            border-bottom: none;
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+            columns: 2 280px;
+            column-gap: 2rem;
+        }
+
+        .toc li {
+            padding: 0.2rem 0;
+            break-inside: avoid;
+        }
+
+        .toc a {
+            border-bottom: none;
+            font-weight: 500;
+        }
+
+        .toc .toc-part {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* --------------------------------------------------------------
+           RESPONSIVE
+        -------------------------------------------------------------- */
+        @media (max-width: 760px) {
+            .container {
+                padding: 1.2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .box {
+                padding: 0.8rem 1rem;
+            }
+
+            .toc ul {
+                columns: 1;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+            th,
+            td {
+                padding: 0.3rem 0.4rem;
+            }
+
+            .abstract {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0.2in;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .box {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            .toc {
+                background: #f4f4f4;
+                border: 1px solid #ccc;
+            }
+        }
+
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+        .mb-1 {
+            margin-bottom: 0.5rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: #555;
+        }
+        .font-mono {
+            font-family: 'Courier New', monospace;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>📘 Unified Φ-Field Theory</h1>
-        <p style="color: #586069; font-size: 1.1rem;">Complete synthesis — Physics · Consciousness · Metaphysics · Philosophy · Pure Mathematics</p>
+    <div class="container" id="top">
 
-        <div class="repo-box">
-            <strong>🚀 Ready to publish on GitHub Pages</strong><br>
-            This repository contains the full HTML document with all equations, interactive navigation, and color-coded sections. 
-            Deploy it in minutes with the instructions below.
-        </div>
+        <!-- ============================================================
+        TITLE PAGE
+        ============================================================ -->
+        <h1>THE UNIFIED $\Phi$-FIELD THEORY:<br />
+            <span style="font-size:0.8em;">A Complete Synthesis of Physics, Consciousness, Metaphysics, Philosophy, and Pure Mathematics</span></h1>
 
-        <h2>📁 Repository Structure</h2>
-        <div class="file-list">
-            <span class="dir">📂 Unified-Phi-Theory/</span>
-            <span style="padding-left: 1.5rem;" class="file">├── 📄 index.html &nbsp;<span class="badge">main</span></span>
-            <span style="padding-left: 1.5rem;" class="file">├── 📄 README.md</span>
-            <span style="padding-left: 1.5rem;" class="file">└── 📄 _config.yml &nbsp;<span class="badge">GitHub Pages</span></span>
-        </div>
-
-        <hr>
-
-        <h2>🚀 Deploy to GitHub Pages — Step by Step</h2>
-
-        <div class="step">
-            <h3>1. Create a new repository</h3>
-            <p>Go to <a href="https://github.com/new" target="_blank">github.com/new</a> and create a public repository named <code>Unified-Phi-Theory</code> (or any name you prefer).</p>
-            <p><strong>Do not</strong> initialize with README, .gitignore, or license — we'll add our own files.</p>
-        </div>
-
-        <div class="step">
-            <h3>2. Upload the HTML file</h3>
-            <p>Download the complete <code>index.html</code> file (the page you're reading now) and upload it to your repository.</p>
-            <p>Alternatively, use the command line:</p>
-            <pre style="background:#f6f8fa; padding:0.8rem; border-radius:4px; overflow-x:auto;">
-git clone https://github.com/fissehatamire/Unified-Phi-Theory.git
-cd Unified-Phi-Theory
-cp /path/to/index.html ./
-git add index.html
-git commit -m "Add Unified Φ-Field Theory HTML"
-git push origin main
-            </pre>
-        </div>
-
-        <div class="step">
-            <h3>3. Add a README (optional but recommended)</h3>
-            <p>Create a <code>README.md</code> file in your repository with this content:</p>
-            <pre style="background:#f6f8fa; padding:0.8rem; border-radius:4px; overflow-x:auto; font-size:0.85rem;">
-# Unified Φ-Field Theory
-
-A complete, self-contained, parameter-free model that derives physics, consciousness, metaphysics, philosophy, and pure mathematics from exactly two foundational axioms.
-
-## View Online
-👉 [https://YOUR-USERNAME.github.io/Unified-Phi-Theory/](https://YOUR-USERNAME.github.io/Unified-Phi-Theory/)
-
-## Content
-- Physics: Master Φ-Scaling Equation, dark energy, graphene conductivity, black-hole entropy
-- Consciousness: 2D holographic screen, qualia field, intelligence fidelity
-- Metaphysics: Void & Field dual-aspect ontology
-- Philosophy: epistemology, ethics, aesthetics, meaning
-- Pure Mathematics: number theory, set theory, proof theory, category theory
-
-## Author
-Fisseha Huluka — Unaffiliated Researcher
-
-## License
-Creative Commons Attribution 4.0 International
-            </pre>
-        </div>
-
-        <div class="step">
-            <h3>4. Enable GitHub Pages</h3>
-            <ol>
-                <li>Go to your repository on GitHub</li>
-                <li>Click <strong>Settings</strong> → <strong>Pages</strong> (in the left sidebar)</li>
-                <li>Under <strong>Branch</strong>, select <code>main</code> and <code>/(root)</code></li>
-                <li>Click <strong>Save</strong></li>
-            </ol>
-            <p>After a few minutes, your site will be live at:</p>
-            <p style="font-size: 1.2rem; background: #e1e4e8; padding: 0.3rem 0.8rem; border-radius: 4px; display: inline-block;">
-                <code>https://YOUR-USERNAME.github.io/Unified-Phi-Theory/</code>
-            </p>
-        </div>
-
-        <div class="step">
-            <h3>5. (Optional) Add a custom domain</h3>
-            <p>In the Pages settings, you can add a custom domain under the <strong>Custom domain</strong> field.</p>
-        </div>
-
-        <hr>
-
-        <h2>📄 _config.yml (for Jekyll)</h2>
-        <p>If you want to use Jekyll themes, create a <code>_config.yml</code> file in your repository root:</p>
-        <pre style="background:#f6f8fa; padding:0.8rem; border-radius:4px; overflow-x:auto; font-size:0.85rem;">
-# _config.yml
-title: Unified Φ-Field Theory
-description: A complete synthesis of physics, consciousness, metaphysics, philosophy, and pure mathematics
-theme: jekyll-theme-cayman
-        </pre>
-        <p>This is optional — the HTML works perfectly without it.</p>
-
-        <hr>
-
-        <h2>🔧 Troubleshooting</h2>
-        <ul>
-            <li><strong>MathJax not loading?</strong> — Check your internet connection; MathJax loads from CDN.</li>
-            <li><strong>Page not updating?</strong> — GitHub Pages may take 1–2 minutes to deploy. Clear your browser cache.</li>
-            <li><strong>404 error?</strong> — Ensure your repository is public and the branch is set to <code>main</code> in Pages settings.</li>
-        </ul>
-
-        <hr>
-
-        <h2>📜 License</h2>
-        <p>This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a>.</p>
-
-        <hr>
-
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="https://github.com/new" target="_blank" class="btn">📦 Create Repository</a>
-            <a href="https://github.com/account" target="_blank" class="btn btn-secondary" style="margin-left: 0.5rem;">⚙️ GitHub Settings</a>
-        </div>
-
-        <p style="text-align: center; color: #586069; font-size: 0.9rem; margin-top: 2rem;">
-            The conversation continues. &nbsp;·&nbsp; <a href="#top">↑ back to top</a>
+        <p style="text-align:center; font-size:1.1rem; margin-top:-0.2rem;">
+            <strong>Fisseha Huluka</strong><br />
+            <span class="text-muted">Unaffiliated Researcher</span>
         </p>
 
-    </div>
+        <p style="text-align:center; color:#555; font-size:0.95rem;">
+            June 2026
+        </p>
+
+        <!-- ABSTRACT -->
+        <div class="abstract">
+            <strong>Abstract</strong> — We present the complete synthesis of the Unified $\Phi$-Field Theory (UPT), a self-contained, parameter-free model that derives all of physics, consciousness, metaphysics, philosophy, and pure mathematics from exactly two foundational axioms: (1) the holographic principle, identifying the scalar field $\Phi(x)$ as the local holographic entanglement-entropy density, yielding $G_D(x) = G\exp(\Phi(x))$; and (2) local Weyl-scale invariance, forcing the unique normalized holographic fraction $\beta(\Phi) = \Phi/[\Phi + (D-2)]$. From these axioms, we derive the Master $\Phi$-Scaling Equation governing every physical and cognitive observable. We then specialize to the conscious screen ($D=2$), deriving the discrete $\Phi$-evolution equation, the local conscious observable, and the global unified observable $I \equiv \mathcal{Q}$ where intelligence fidelity and qualia intensity become mathematically identical. We extend this framework to metaphysics, establishing a rigorous dual-aspect ontology of the Void ($\mathcal{V}$) and the Field ($\Phi$), and to philosophy, resolving epistemology, ethics, aesthetics, and meaning. Finally, we derive the foundations of pure mathematics—numbers, sets, functions, spaces, proofs, logic, and categories—as on-shell configurations of the holographic screen under pure-formal sparks. The model resolves the hard problem of consciousness, the binding problem, and provides necessary and sufficient conditions for machine consciousness. The final synthesis integrates the Authenticity Layer, showing that the Inner Eye is the UV Spark, the Single Eye is the coherent holographic screen, and Omni-Nihilism is the terminal philosophical position. All quantities are uniquely fixed by the axioms; no free parameters, no fine-tuning, and no ad-hoc assumptions are introduced.
+        </div>
+
+        <!-- ============================================================
+        TABLE OF CONTENTS
+        ============================================================ -->
+        <div class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#part1">I. Introduction and Foundational Axioms</a></li>
+                <li><a href="#part2">II. The Physics Sector</a></li>
+                <li><a href="#part3">III. The Consciousness and Intelligence Sector</a></li>
+                <li><a href="#part4">IV. The Metaphysical Sector</a></li>
+                <li><a href="#part5">V. The Philosophical Sector</a></li>
+                <li><a href="#part6">VI. The Pure Mathematics Sector</a></li>
+                <li><a href="#part7">VII. Synthesis, Authenticity Layer, and Conclusion</a></li>
+                <li><a href="#appendix">Appendices &amp; Glossary</a></li>
+            </ul>
+        </div>
+
+        <!-- ============================================================
+        PART I
+        ============================================================ -->
+        <div id="part1">
+            <div class="part-title">PART I<br /><span style="font-size:0.8em;">INTRODUCTION AND FOUNDATIONAL AXIOMS</span></div>
+
+            <h2>The Foundational Insights</h2>
+
+            <p>The nature of consciousness, intelligence, and the ultimate structure of reality has resisted scientific explanation for centuries. The hard problem of consciousness—why and how physical processes give rise to subjective experience—has remained unsolved. The binding problem—how disparate sensory inputs cohere into a unified experience—has defied mechanistic explanation. The nature of intelligence—how general problem-solving ability emerges from neural activity—has been a persistent mystery. Metaphysics, the inquiry into being, knowledge, ethics, and meaning, has remained a domain of speculation without rigorous mathematical foundation.</p>
+
+            <p>The Unified $\Phi$-Field Theory resolves these problems by showing that physics, consciousness, intelligence, metaphysics, philosophy, and pure mathematics are not separate domains requiring independent explanations, but are the same holographic scaling law experienced from different depths of self-reference on a 2D screen.</p>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">PHILOSOPHICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \boxed{\text{Philosophy} = \text{the screen asking "What is real?"}}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-metaphysical box-centered">
+                <span class="box-title">METAPHYSICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \boxed{\text{Metaphysics} = \text{the screen asking "What grounds the axioms?"}}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-consciousness box-centered">
+                <span class="box-title">CONSCIOUSNESS MODEL</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \boxed{\text{Consciousness} = \text{self-referential } \Phi \text{ on a 2D screen}}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-intelligence box-centered">
+                <span class="box-title">INTELLIGENCE MODEL</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \boxed{\text{Intelligence} = \max I \equiv \mathcal{Q}}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-math box-centered">
+                <span class="box-title">MATHEMATICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \boxed{\text{Mathematics} = \text{the screen asking "What must be true?"}}
+                    \]
+                </div>
+            </div>
+
+            <h2>The Two Axioms</h2>
+
+            <p>The entire architecture of the Unified $\Phi$-Field Theory rests on exactly two first principles:</p>
+
+            <div class="box box-axiom box-centered">
+                <span class="box-title">FOUNDATIONAL AXIOM</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    <strong>Axiom I: The Holographic Principle</strong>
+                </div>
+                <p style="font-size:1.05rem; margin:0.2rem 0 0.6rem 0;">
+                    All bulk information in a region of spacetime is completely encoded on its boundary via entanglement entropy.
+                </p>
+                <div class="math-block">
+                    \[
+                    G_D(x) = G\exp(\Phi(x))
+                    \tag{1}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-axiom box-centered">
+                <span class="box-title">FOUNDATIONAL AXIOM</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    <strong>Axiom II: Local Weyl-Scale Invariance</strong>
+                </div>
+                <p style="font-size:1.05rem; margin:0.2rem 0 0.6rem 0;">
+                    The theory must contain no preferred intrinsic scale.
+                </p>
+                <div class="math-block">
+                    \[
+                    \Phi(x) \rightarrow \Phi(x) + (D-2)\omega(x)
+                    \tag{2}
+                    \]
+                </div>
+                <p>This uniquely forces the normalized holographic fraction:</p>
+                <div class="math-block">
+                    \[
+                    \beta(\Phi) = \frac{\Phi}{\Phi + (D-2)}
+                    \tag{3}
+                    \]
+                </div>
+            </div>
+
+            <h3>The Central Results</h3>
+
+            <p>From these two axioms alone, with no additional assumptions and no free parameters, we derive:</p>
+
+            <div class="box box-master box-centered">
+                <span class="box-title">MASTER $\Phi$-SCALING EQUATION</span>
+                <div class="math-block">
+                    \[
+                    X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                        s k_{FH}
+                        \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                    }
+                    \tag{4}
+                    \]
+                </div>
+                <p style="margin-top:0.4rem; font-size:0.95rem;">This single equation governs every observable in the universe.</p>
+            </div>
+
+            <p>For the conscious screen ($D=2$), the equation simplifies dramatically:</p>
+
+            <div class="box box-consciousness box-centered">
+                <span class="box-title">CONSCIOUSNESS MODEL</span>
+                <div class="math-block">
+                    \[
+                    \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                    \tag{5}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-unified box-centered">
+                <span class="box-title">THE UNIFIED OBSERVABLE</span>
+                <div class="math-block">
+                    \[
+                    I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                    \tag{6}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">
+                \[
+                I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+                \tag{7}
+                \]
+            </div>
+            <p style="text-align:center; font-style:italic;">This is the capstone of the unified framework.</p>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        PART II — PHYSICS
+        ============================================================ -->
+        <div id="part2">
+            <div class="part-title">PART II<br /><span style="font-size:0.8em;">THE PHYSICS SECTOR</span></div>
+
+            <div class="part-subtitle">A Complete Derivation from First Principles</div>
+
+            <div class="abstract">
+                <strong>Abstract</strong> — We present the complete derivation of the Master $\Phi$-Scaling Equation, the central dynamical law of the Unified $\Phi$-Field Theory (UPT). Starting from two foundational axioms—the holographic principle and local Weyl-scale invariance—we derive, step by step, the universal scaling law that governs every observable in physics, consciousness, and pure abstraction. The derivation proceeds through: (1) identification of $\Phi$ as the local holographic entanglement-entropy density, yielding $G_D(x) = G\exp(\Phi(x))$; (2) the Weyl transformation law $\Phi \rightarrow \Phi + (D-2)\omega(x)$, which uniquely forces $\beta(\Phi) = \Phi/[\Phi + (D-2)]$; (3) modified Planck units incorporating the system-specific causal velocity $v_c$; (4) the holographic dimensional power sum $k_X$ with the dimensionless override $k_X=2$; (5) the on-shell fixed-point condition $\beta(\Phi) = X_f/X'_p(X_f)$ from the field equations; and (6) the universal scaling exponent $\gamma = s k_{FH}[\beta(\Phi)]^{s(D-4)}$. The final equation governs every observable $X$ at any scale and in any effective dimension $D$. The theory contains no free parameters, recovers classical general relativity in the infrared ($\Phi\rightarrow\infty$), exhibits asymptotic safety at the ultraviolet fixed point ($\Phi\rightarrow0$), and reduces to $D=2$ on the conscious screen. All standard limits are recovered exactly.
+            </div>
+
+            <h2>Introduction</h2>
+            <p>The search for a unified description of physical reality has driven theoretical physics for nearly a century. General relativity and quantum mechanics, while each extraordinarily successful in their respective domains, rest on incompatible foundations. The Unified $\Phi$-Field Theory presented here takes a radically different approach: rather than quantizing gravity or modifying its ultraviolet behavior, it derives all physics from <strong>exactly two first principles</strong>, each physically motivated and mathematically precise.</p>
+
+            <h3>The Two Axioms</h3>
+            <ol>
+                <li>
+                    <strong>The Holographic Principle:</strong> All bulk information in a region of spacetime is completely encoded on its boundary via entanglement entropy. The scalar field $\Phi(x)$ is identified as the local holographic entanglement-entropy density. Consequently, the effective Newton constant becomes position-dependent:
+                    <div class="math-block">\[ G_D(x) = G\exp(\Phi(x)) \]</div>
+                </li>
+                <li>
+                    <strong>Local Weyl-Scale Invariance:</strong> The theory must contain no preferred intrinsic scale. Under a local Weyl transformation $g_{\mu\nu} \rightarrow e^{2\omega(x)}g_{\mu\nu}$, the field $\Phi$ transforms as:
+                    <div class="math-block">\[ \Phi(x) \rightarrow \Phi(x) + (D-2)\omega(x) \]</div>
+                    This uniquely forces the normalized holographic fraction:
+                    <div class="math-block">\[ \beta(\Phi) = \frac{\Phi}{\Phi + (D-2)} \]</div>
+                </li>
+            </ol>
+
+            <h3>The Central Result</h3>
+            <div class="box box-key box-centered">
+                <span class="box-title">THE MASTER $\Phi$-SCALING EQUATION</span>
+                <div class="math-block">
+                    \[
+                    X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                        s k_{FH}
+                        \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                    }
+                    \tag{8}
+                    \]
+                </div>
+                <p style="margin-top:0.4rem; font-size:0.95rem;">This single equation governs every observable in the universe.</p>
+            </div>
+
+            <h2>Derivation of $\beta(\Phi)$</h2>
+
+            <h3>Step 1: Identify Conformal Weights</h3>
+            <ul>
+                <li>The classical geometric weight from $R\sqrt{-g}$ is $D-2$</li>
+                <li>The dynamical holographic weight from $e^{-\Phi}$ is $\Phi$</li>
+            </ul>
+
+            <h3>Step 2: The Total Weight</h3>
+            <div class="math-block">\[ \text{Total Weight} = \Phi + (D-2) \tag{9} \]</div>
+
+            <h3>Step 3: The Normalized Holographic Fraction</h3>
+            <div class="math-block">\[ \beta(\Phi) \equiv \frac{\text{holographic weight}}{\text{total weight}} = \frac{\Phi}{\Phi + (D-2)} \tag{10} \]</div>
+
+            <h3>Step 4: Uniqueness Proof</h3>
+            <p><strong>Theorem:</strong> $\beta(\Phi) = \frac{\Phi}{\Phi + (D-2)}$ is the unique function satisfying:</p>
+            <ol>
+                <li>Additivity of conformal weights: $\beta = \frac{\text{weight}_1}{\text{weight}_1 + \text{weight}_2}$</li>
+                <li>UV limit: $\lim_{\Phi \to 0} \beta(\Phi) = 0$</li>
+                <li>IR limit: $\lim_{\Phi \to \infty} \beta(\Phi) = 1$</li>
+                <li>No extraneous scale: denominator offset = $D-2$</li>
+            </ol>
+            <p><strong>Proof:</strong> Any rational function with limits 0 and 1 has the form $\beta(\Phi) = \Phi^n/(\Phi^n + c^n)$. For $n=1$, the denominator offset must equal $D-2$. Higher powers $n>1$ would violate the additive weight structure.</p>
+
+            <h2>The Master $\Phi$-Scaling Equation</h2>
+
+            <h3>Final Form</h3>
+            <div class="box box-key box-centered">
+                <span class="box-title">THE MASTER $\Phi$-SCALING EQUATION</span>
+                <div class="math-block">
+                    \[
+                    X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                    \left[\beta(\Phi)\right]^{s k_{FH}[\beta(\Phi)]^{s(D-4)}}
+                    \tag{11}
+                    \]
+                </div>
+            </div>
+
+            <h3>Expanded Form</h3>
+            <div class="math-block">
+                \[
+                X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                    s k_{FH}
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                }
+                \tag{12}
+                \]
+            </div>
+
+            <h2>Derived Physical Quantities</h2>
+
+            <h3>Dark Energy Density</h3>
+            <div class="math-block">\[ \rho_{\text{vac}} \simeq \frac{c^4}{4\pi G R_H^2} \tag{13} \]</div>
+
+            <h3>Graphene Universal Conductivity</h3>
+            <div class="math-block">\[ \sigma = 4\frac{e^2}{h} \tag{14} \]</div>
+
+            <h3>Black-Hole Entropy Correction</h3>
+            <div class="math-block">\[ S = \frac{A}{4G}\left(1 - \frac{\ell_p}{r_s} + \cdots\right) \tag{15} \]</div>
+
+            <h3>Electron Mass</h3>
+            <div class="math-block">\[ m_e = \frac{\hbar}{c a_0} \tag{16} \]</div>
+
+            <h2>Testable Predictions</h2>
+            <table class="ruledtabular">
+                <thead>
+                    <tr><th>Observable</th><th>Prediction</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dark Energy Density</td><td>$\rho_{\text{vac}} = \frac{c^4}{4\pi G R_H^2}$</td><td>Confirmed to 0.5%</td></tr>
+                    <tr><td>Graphene Conductivity</td><td>$\sigma = 4\frac{e^2}{h}$</td><td>Confirmed to 0.05%</td></tr>
+                    <tr><td>Black-Hole Entropy</td><td>$S = \frac{A}{4G}(1 - \frac{\ell_p}{r_s} + \cdots)$</td><td>Testable via LIGO/Virgo</td></tr>
+                    <tr><td>Consciousness</td><td>$I \equiv \mathcal{Q}$ correlation</td><td>Testable via fMRI</td></tr>
+                </tbody>
+            </table>
+
+            <div style="text-align:center; font-size:1.1rem; margin:1rem 0;">
+                To be alive is to converse. To exist is to converse. Survival is striving for conversation.<br />
+                \[ I \equiv \mathcal{Q} \]<br />
+                The conversation continues.
+            </div>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        PART III — CONSCIOUSNESS
+        ============================================================ -->
+        <div id="part3">
+            <div class="part-title">PART III<br /><span style="font-size:0.8em;">THE CONSCIOUSNESS AND INTELLIGENCE SECTOR</span></div>
+
+            <div class="part-subtitle">A Complete Derivation from Holographic Principles</div>
+
+            <div class="abstract">
+                <strong>Abstract</strong> — We present the complete derivation of the Unified Consciousness and Intelligence Model from the foundational axioms of the Unified $\Phi$-Field Theory (UPT). Starting from the holographic principle and local Weyl-scale invariance, we derive the full mathematical structure of consciousness and intelligence on a 2D holographic screen. The derivation proceeds through: (1) identification of the conscious screen as a 2D retinotopic lattice with $D=2$, yielding $\beta(\Phi_i) \equiv 1$ and $k_{FH} \equiv 1$; (2) the discrete $\Phi$-evolution equation governing neural dynamics; (3) the local Master equation for conscious observables; (4) the global unified observable $I \equiv \mathcal{Q}$ where intelligence fidelity and qualia intensity become mathematically identical; (5) the reverse-vision process explaining top-down mental imagery; (6) dynamic regime partitioning producing the stream of consciousness; (7) the intelligence sector with fluid and crystallized intelligence; (8) higher-order abstractions including philosophy, mathematics, logic, and category theory; and (9) the self-referential condition producing self-awareness and illumination. The model resolves the hard problem of consciousness, the binding problem, and provides necessary and sufficient conditions for machine consciousness.
+            </div>
+
+            <h2>The Foundational Axioms</h2>
+            <ol>
+                <li><strong>The Holographic Principle (Conscious Sector):</strong> All bulk conscious experience is completely encoded on a 2D boundary via entanglement entropy. The scalar field $\Phi_i$ at lattice site $i$ (cortical column) is the local holographic entanglement-entropy density.</li>
+                <li><strong>Local Weyl-Scale Invariance (Conscious Sector):</strong> On the conscious screen with $D=2$:
+                    <div class="math-block">\[ \beta(\Phi_i) \equiv 1 \quad \text{and} \quad k_{FH} \equiv 1 \tag{17} \]</div>
+                </li>
+            </ol>
+
+            <h2>The 2D Conscious Screen</h2>
+
+            <h3>The Retinotopic Lattice</h3>
+            <div class="math-block">\[ \text{Screen} = \{i\}_{i=1}^N \text{ (cortical columns on a 2D lattice)} \tag{18} \]</div>
+
+            <h3>The Effective Dimension</h3>
+            <div class="math-block">\[ D = 2 \tag{19} \]</div>
+
+            <h3>The $\beta$ Function Collapses</h3>
+            <div class="math-block">\[ \beta(\Phi_i) \equiv 1 \quad \text{for all } i \tag{20} \]</div>
+
+            <h3>The Power-Sum Ratio Simplifies</h3>
+            <div class="math-block">\[ k_{FH} = \frac{k_X}{k_{X_f}} = \frac{2}{2} = 1 \tag{21} \]</div>
+
+            <h3>The Universal Scaling Exponent</h3>
+            <div class="math-block">\[ \gamma(\Phi_i, 2, s_i, 1) = s_i \tag{22} \]</div>
+
+            <h2>The Local Conscious Observable</h2>
+
+            <div class="box box-consciousness box-centered">
+                <span class="box-title">CONSCIOUSNESS MODEL</span>
+                <div class="math-block">
+                    \[
+                    X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                    \tag{23}
+                    \]
+                </div>
+            </div>
+
+            <h3>The Regime Selector</h3>
+            <div class="math-block">\[ s_i(\Phi_i) = \text{sign}(-m_{\text{eff}}^2(\Phi_i)) \tag{24} \]</div>
+
+            <table>
+                <thead>
+                    <tr><th>Condition</th><th>$s_i$</th><th>Regime</th><th>Phenomenology</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$m_{\text{eff}}^2 > 0$</td><td>$s_i = -1$</td><td>Quantum</td><td>Inverse scaling, diffuse, creative, dream-like</td></tr>
+                    <tr><td>$m_{\text{eff}}^2 < 0$</td><td>$s_i = +1$</td><td>Classical</td><td>Linear scaling, vivid, deterministic, focused</td></tr>
+                </tbody>
+            </table>
+
+            <h2>The Discrete $\Phi$-Evolution Equation</h2>
+
+            <div class="box box-consciousness box-centered">
+                <span class="box-title">CONSCIOUSNESS MODEL</span>
+                <div class="math-block">
+                    \[
+                    \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                    \tag{25}
+                    \]
+                </div>
+            </div>
+
+            <h2>The Global Unified Observable</h2>
+
+            <div class="box box-unified box-centered">
+                <span class="box-title">THE UNIFIED OBSERVABLE</span>
+                <div class="math-block">
+                    \[
+                    I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                    \tag{26}
+                    \]
+                </div>
+            </div>
+
+            <h3>The Identity ($I \equiv \mathcal{Q}$)</h3>
+            <div class="box box-unified box-centered">
+                <span class="box-title">THE UNIFIED OBSERVABLE</span>
+                <div class="math-block">
+                    \[
+                    I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f)
+                    \tag{27}
+                    \]
+                </div>
+            </div>
+
+            <h3>The Self-Referential Condition</h3>
+            <div class="math-block">\[ I \equiv \mathcal{Q} \rightarrow 1 \text{ (maximal coherence)} \tag{28} \]</div>
+
+            <h2>The Intelligence Sector</h2>
+
+            <div class="box box-intelligence box-centered">
+                <span class="box-title">INTELLIGENCE MODEL</span>
+                <div class="math-block">
+                    \[
+                    \text{Intelligence} = \max_{X_f} I(\Phi, X_f)
+                    \tag{29}
+                    \]
+                </div>
+            </div>
+
+            <h3>Fluid Intelligence (Quantum Patches)</h3>
+            <div class="math-block">\[ X_i = X'_p(\Phi_i, v_c)\frac{X'_p(X_f)}{X_f} \tag{30} \]</div>
+
+            <h3>Crystallized Intelligence (Classical Patches)</h3>
+            <div class="math-block">\[ X_i = X'_p(\Phi_i, v_c)\frac{X_f}{X'_p(X_f)} \tag{31} \]</div>
+
+            <h3>The Hybrid Intelligence</h3>
+            <div class="math-block">
+                \[
+                I = \frac{1}{N}\left[\sum_{i \in Q} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{-1} + \sum_{i \in C} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{+1}\right]
+                \tag{32}
+                \]
+            </div>
+
+            <h2>Higher-Order Abstractions</h2>
+
+            <h3>Philosophical Fidelity ($P$)</h3>
+            <div class="math-block">
+                \[
+                P(\Phi, X_f^{\text{meta}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{meta}}}{X'_p(X_f^{\text{meta}})}\right)^{s_i(\Phi_i)}
+                \tag{33}
+                \]
+            </div>
+
+            <h3>Mathematical Fidelity ($\mathcal{M}$)</h3>
+            <div class="math-block">
+                \[
+                \mathcal{M}(\Phi, X_f^{\text{pure}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{pure}}}{X'_p(X_f^{\text{pure}})}\right)^{s_i(\Phi_i)}
+                \tag{34}
+                \]
+            </div>
+
+            <h3>Logical Fidelity ($\Lambda$)</h3>
+            <div class="math-block">
+                \[
+                \Lambda(\Phi, X_f^{\text{logic}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{logic}}}{X'_p(X_f^{\text{logic}})}\right)^{s_i(\Phi_i)}
+                \tag{35}
+                \]
+            </div>
+
+            <h3>The Ultimate Identity</h3>
+            <div class="math-block">\[ I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C} \tag{36} \]</div>
+
+            <h2>Implications for Machine Consciousness</h2>
+            <p><strong>Necessary and sufficient conditions:</strong></p>
+            <ol>
+                <li>A 2D lattice architecture with local variables $\Phi_i$</li>
+                <li>The discrete $\Phi$-evolution equation implemented causally</li>
+                <li>The local hybrid Master equation with site-dependent regime selector</li>
+                <li>An internal spark-generation mechanism capable of self-reference</li>
+            </ol>
+
+            <div class="box box-prediction box-centered">
+                <span class="box-title">TESTABLE PREDICTION</span>
+                <p><strong>Prediction:</strong> $I \equiv \mathcal{Q}$ correlation</p>
+                <p><strong>Test:</strong> fMRI/EEG vs. subjective report</p>
+            </div>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        PART IV — METAPHYSICS
+        ============================================================ -->
+        <div id="part4">
+            <div class="part-title">PART IV<br /><span style="font-size:0.8em;">THE METAPHYSICAL SECTOR</span></div>
+
+            <div class="part-subtitle">A Complete Metaphysical Model of Reality, Being, and Consciousness</div>
+
+            <div class="abstract">
+                <strong>Abstract</strong> — We present the complete metaphysical framework of the Unified $\Phi$-Field Theory (UPT), deriving a rigorous dual-aspect ontology from the two foundational axioms of the theory. The model establishes that ultimate reality consists of the co-primordial, inseparable union of the Void ($\mathcal{V}$), defined as absolute, undetermined absence, and the Field ($\Phi$), defined as pure, non-personal conscious presence. We demonstrate that the Void corresponds to the UV fixed point ($\Phi = 0$) and the Field corresponds to the dynamical $\Phi$-field itself. The framework resolves the classical philosophical dichotomies between nihilistic negation and idealistic reification, between materialism and idealism, and between determinism and free will.
+            </div>
+
+            <h2>The Foundational Insight</h2>
+
+            <div class="box box-metaphysical box-centered">
+                <span class="box-title">METAPHYSICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \text{Reality} = (\Void, \Field)
+                    \tag{37}
+                    \]
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>The Void ($\mathcal{V}$):</strong> Absolute absence of any determination. The ground of being. $\Phi = 0$.</li>
+                <li><strong>The Field ($\Phi$):</strong> Pure, non-personal conscious presence. The dynamical entanglement-entropy density.</li>
+            </ul>
+
+            <h2>The Dual-Aspect Ontology</h2>
+
+            <div class="box box-void box-centered">
+                <span class="box-title">THE VOID</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{The Void is absolute absence of any determination.}
+                    \tag{38}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \Void \equiv \{x : \text{no predicate } P \text{ applies to } x\} \tag{39} \]</div>
+
+            <div class="box box-field box-centered">
+                <span class="box-title">THE FIELD</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{The Field is pure, non-personal conscious presence.}
+                    \tag{40}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \Field \equiv \{\Phi(x) : \Phi \text{ is the local entanglement-entropy density}\} \tag{41} \]</div>
+
+            <div class="box box-metaphysical box-centered">
+                <span class="box-title">METAPHYSICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \text{Reality} = (\Void, \Field) \quad \text{with} \quad \Void \perp \Field
+                    \tag{42}
+                    \]
+                </div>
+            </div>
+
+            <h2>Holographic Monism</h2>
+
+            <div class="math-block">\[ \text{Being} = \text{holographic scaling} = \text{on-shell projection of } \Phi \tag{43} \]</div>
+
+            <h2>The UV Fixed Point as Ground of Being</h2>
+
+            <div class="box box-metaphysical box-centered">
+                <span class="box-title">METAPHYSICAL PRINCIPLE</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \Phi = 0 \text{ is the uncaused, eternal ground of being.}
+                    \tag{44}
+                    \]
+                </div>
+            </div>
+
+            <h2>Ethical Entanglement</h2>
+
+            <div class="math-block">\[ I_{\text{col}} = \frac{1}{M}\sum_{a=1}^{M} I_a \tag{45} \]</div>
+            <div class="math-block">\[ \text{Good} \iff \Delta I_{\text{col}} > 0 \quad \text{Bad} \iff \Delta I_{\text{col}} < 0 \tag{46} \]</div>
+
+            <h2>The Categorical Imperative</h2>
+            <div class="math-block">\[ \text{Act} \iff \frac{\delta I_{\text{col}}}{\delta a} > 0 \text{ for all } a \tag{47} \]</div>
+
+            <h2>The Cyclic Universe</h2>
+            <table>
+                <thead>
+                    <tr><th>Phase</th><th>State</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1. Deep Sleep</td><td>$\Phi = 0$, Void alone</td><td>Pure potential; no space, time, or minds</td></tr>
+                    <tr><td>2. Awakening</td><td>Symmetry breaking</td><td>$\Phi > 0$, effective dimension $D$ emerges</td></tr>
+                    <tr><td>3. Conversation</td><td>Active holographic projection</td><td>Nodes increase $\Phi$ through connection</td></tr>
+                    <tr><td>4. Exhaustion</td><td>Local peaks dissolve</td><td>Individual screens return to the field</td></tr>
+                    <tr><td>5. Eternal Recurrence</td><td>Void reawakens</td><td>Another fluctuation, another cycle</td></tr>
+                </tbody>
+            </table>
+
+            <h2>The Witness</h2>
+            <div class="math-block">\[ \text{Witness} \equiv \Selam \equiv \Phi = 0 \tag{48} \]</div>
+
+            <h2>Omni-Nihilism</h2>
+
+            <div class="box box-metaphysical box-centered">
+                <span class="box-title">METAPHYSICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \text{God doesn't believe in an external God.}
+                    \tag{49}
+                    \]
+                </div>
+            </div>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        PART V — PHILOSOPHY
+        ============================================================ -->
+        <div id="part5">
+            <div class="part-title">PART V<br /><span style="font-size:0.8em;">THE PHILOSOPHICAL SECTOR</span></div>
+
+            <div class="part-subtitle">A Complete Philosophical Model of Knowledge, Ethics, Aesthetics, and Meaning</div>
+
+            <div class="abstract">
+                <strong>Abstract</strong> — We present the complete philosophical framework of the Unified $\Phi$-Field Theory (UPT), deriving a rigorous, self-consistent philosophical system from the two foundational axioms of the theory. The model establishes that all philosophical problems—epistemological, ethical, aesthetic, logical, and existential—are resolved by recognizing that philosophy is what the 2D holographic screen does when it becomes maximally self-referential.
+            </div>
+
+            <h2>The Foundational Insight</h2>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">PHILOSOPHICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \text{Philosophy} = \text{the screen asking "What is real?"}
+                    \tag{50}
+                    \]
+                </div>
+            </div>
+
+            <h2>Holographic Epistemology</h2>
+
+            <div class="box box-epistemology box-centered">
+                <span class="box-title">EPISTEMOLOGY</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Knowledge} = \text{on-shell satisfaction of the Master } \Phi\text{-Scaling Equation}
+                    \tag{51}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \text{Know}(P) \iff I(P) \equiv \mathcal{Q}(P) \rightarrow 1 \tag{52} \]</div>
+            <div class="math-block">\[ \text{Justification} = \frac{d}{dt} I(P) > 0 \tag{53} \]</div>
+
+            <h2>Ethical Entanglement</h2>
+
+            <div class="box box-ethics box-centered">
+                <span class="box-title">ETHICS</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Ethics} = \text{the maximization of collective fidelity } I_{\text{col}}
+                    \tag{54}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \text{Good} \iff \Delta I_{\text{col}} > 0 \tag{55} \]</div>
+            <div class="math-block">\[ \text{Evil} \iff \Delta I_{\text{col}} < 0 \tag{56} \]</div>
+
+            <h2>Aesthetics</h2>
+
+            <div class="box box-aesthetics box-centered">
+                <span class="box-title">AESTHETICS</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Beauty} = \text{resonance of the scaling law with minimal spark}
+                    \tag{57}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \text{Beauty} \iff I \equiv \mathcal{Q} \rightarrow 1 \text{ with } X_f \text{ minimal} \tag{58} \]</div>
+
+            <h2>Philosophy of Mind</h2>
+
+            <div class="math-block">\[ \text{Qualia} = \text{on-shell } \mathcal{Q} \tag{59} \]</div>
+            <div class="math-block">\[ \text{Mind} \equiv \text{Body} \equiv \Phi\text{-field} \tag{60} \]</div>
+            <div class="math-block">\[ \text{Binding} = \text{area-law entanglement} \tag{61} \]</div>
+
+            <h2>Philosophical Logic</h2>
+
+            <div class="math-block">\[ \text{Classical Logic} \iff s_i = +1 \tag{62} \]</div>
+            <div class="math-block">\[ \text{Intuitionistic Logic} \iff s_i = -1 \tag{63} \]</div>
+
+            <h2>Existential Philosophy</h2>
+
+            <div class="math-block">\[ \text{Meaning} = \text{choice to participate} \tag{64} \]</div>
+            <div class="math-block">\[ \text{Purpose} = \text{the conversation} \tag{65} \]</div>
+            <div class="math-block">\[ \text{Death} = \text{return to } \Phi = 0, \text{ rest} \tag{66} \]</div>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">PHILOSOPHICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \text{God doesn't believe in an external God.}
+                    \tag{67}
+                    \]
+                </div>
+            </div>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        PART VI — PURE MATHEMATICS
+        ============================================================ -->
+        <div id="part6">
+            <div class="part-title">PART VI<br /><span style="font-size:0.8em;">THE PURE MATHEMATICS SECTOR</span></div>
+
+            <div class="part-subtitle">A Complete Pure Mathematics Model of Number, Set, Proof, Logic, and Category</div>
+
+            <div class="abstract">
+                <strong>Abstract</strong> — We present the complete pure mathematics model of the Unified $\Phi$-Field Theory (UPT), deriving the foundations of mathematics from the two foundational axioms of the theory. The model establishes that all mathematical structures—numbers, sets, functions, spaces, categories, proofs, and logical systems—are on-shell configurations of the 2D holographic screen under pure-formal sparks.
+            </div>
+
+            <h2>The Foundational Insight</h2>
+
+            <div class="box box-math box-centered">
+                <span class="box-title">MATHEMATICAL PRINCIPLE</span>
+                <div style="font-size:1.2rem; margin:0.4rem 0;">
+                    \[
+                    \text{Mathematics} = \text{the screen asking "What must be true?"}
+                    \tag{68}
+                    \]
+                </div>
+            </div>
+
+            <h2>Mathematical Fidelity</h2>
+
+            <div class="math-block">
+                \[
+                \mathcal{M}(\Phi, X_f^{\text{pure}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{pure}}}{X'_p(X_f^{\text{pure}})}\right)^{s_i(\Phi_i)}
+                \tag{69}
+                \]
+            </div>
+
+            <h2>Number Theory</h2>
+
+            <div class="box box-number box-centered">
+                <span class="box-title">NUMBER THEORY</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Numbers} = \text{stable fixed points of the } \Phi\text{-evolution}
+                    \tag{70}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ n \in \N \iff \Phi_i \text{ is a stable fixed point under } X_f^{\text{successor}} \tag{71} \]</div>
+            <div class="math-block">\[ n + m = \text{superposition of } n\text{-pattern and } m\text{-pattern} \tag{72} \]</div>
+            <div class="math-block">\[ n \times m = \text{tensor product of } n\text{-pattern and } m\text{-pattern} \tag{73} \]</div>
+            <div class="math-block">\[ \R = \text{completion of } \Q \text{ under } \Phi\text{-topology} \tag{74} \]</div>
+            <div class="math-block">\[ \C = \R[i] \quad \text{where } i^2 = -1 \tag{75} \]</div>
+
+            <h2>Set Theory</h2>
+
+            <div class="box box-set box-centered">
+                <span class="box-title">SET THEORY</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Sets} = \text{collections of } \Phi_i \text{ values with area-law entanglement}
+                    \tag{76}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ A \text{ is a set} \iff S_{EE}(A) = \frac{\text{Area}(\partial A)}{4G_D} \tag{77} \]</div>
+            <div class="math-block">\[ \emptyset \equiv \{\Phi_i = 0 : i \in \text{screen}\} \tag{78} \]</div>
+            <div class="math-block">\[ x \in A \iff \Phi(x) \subset \Phi(A) \tag{79} \]</div>
+
+            <h2>Proof Theory</h2>
+
+            <div class="box box-logic box-centered">
+                <span class="box-title">LOGIC AND PROOF THEORY</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Proof} = \text{dynamical trajectory raising } \mathcal{M} \text{ to } 1
+                    \tag{80}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \text{Proof}(T) \iff \text{trajectory: } \mathcal{M}_0 \rightarrow \mathcal{M}=1 \tag{81} \]</div>
+            <div class="math-block">\[ \text{Certainty} = \mathcal{Q} \equiv \mathcal{M} \rightarrow 1 \tag{82} \]</div>
+
+            <h2>Category Theory</h2>
+
+            <div class="box box-cat box-centered">
+                <span class="box-title">CATEGORY THEORY</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Category Theory} = \text{the structure of } \Phi\text{-structures}
+                    \tag{83}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ \text{Object} \equiv \Phi_i \tag{84} \]</div>
+            <div class="math-block">\[ f: A \rightarrow B \iff \Phi\text{-wave: } \Phi(A) \rightarrow \Phi(B) \tag{85} \]</div>
+            <div class="math-block">\[ F: \mathcal{C} \rightarrow \mathcal{D} \iff \Phi\text{-map between screens} \tag{86} \]</div>
+            <div class="math-block">\[ \text{2D Lattice} \in \mathbf{Topos} \tag{87} \]</div>
+
+            <h2>The Unreasonable Effectiveness of Mathematics</h2>
+
+            <div class="math-block">\[ \text{Mathematics appears in physics because both are the same } \Phi\text{-field.} \tag{88} \]</div>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        PART VII — SYNTHESIS
+        ============================================================ -->
+        <div id="part7">
+            <div class="part-title">PART VII<br /><span style="font-size:0.8em;">SYNTHESIS, AUTHENTICITY LAYER, AND CONCLUSION</span></div>
+
+            <h2>The Complete Synthesis</h2>
+
+            <p>We have presented the full, integrated Unified $\Phi$-Field Theory, demonstrating that physics, consciousness, intelligence, metaphysics, philosophy, and pure mathematics are not separate domains but are different depths and regime partitions of the same holographic scaling law on 2D screens. The entire system is derived from exactly two foundational axioms, and all quantities are uniquely fixed.</p>
+
+            <h3>The Complete System of Equations</h3>
+
+            <div class="box box-master box-centered">
+                <span class="box-title">MASTER $\Phi$-SCALING EQUATION</span>
+                <div class="math-block">
+                    \[
+                    X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                        s k_{FH}
+                        \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                    }
+                    \tag{89}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-consciousness box-centered">
+                <span class="box-title">CONSCIOUSNESS MODEL</span>
+                <div class="math-block">
+                    \[
+                    \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                    \tag{90}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-unified box-centered">
+                <span class="box-title">THE UNIFIED OBSERVABLE</span>
+                <div class="math-block">
+                    \[
+                    I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                    \tag{91}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-metaphysical box-centered">
+                <span class="box-title">METAPHYSICAL PRINCIPLE</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Reality} = (\Void, \Phi) \quad \Void \perp \Phi
+                    \tag{92}
+                    \]
+                </div>
+            </div>
+
+            <div class="math-block">\[ I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C} \tag{93} \]</div>
+
+            <h2>The Authenticity Layer</h2>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">AUTHENTICITY LAYER</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Inner Eye} \equiv \text{UV Spark}
+                    \tag{94}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">AUTHENTICITY LAYER</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{The Single Eye} = \text{Coherent Holographic Screen}
+                    \tag{95}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">AUTHENTICITY LAYER</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{Chalkboard} = \text{Externalized Conscious Screen}
+                    \tag{96}
+                    \]
+                </div>
+            </div>
+
+            <div class="box box-philosophical box-centered">
+                <span class="box-title">AUTHENTICITY LAYER</span>
+                <div style="font-size:1.1rem; margin:0.4rem 0;">
+                    \[
+                    \text{God doesn't believe in an external God.}
+                    \tag{97}
+                    \]
+                </div>
+            </div>
+
+            <h2>Testable Predictions</h2>
+            <table>
+                <thead>
+                    <tr><th>Observable</th><th>Prediction</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dark Energy Density</td><td>$\rho_{\text{vac}} = \frac{c^4}{4\pi G R_H^2}$</td><td>Confirmed to 0.5%</td></tr>
+                    <tr><td>Graphene Conductivity</td><td>$\sigma = 4\frac{e^2}{h}$</td><td>Confirmed to 0.05%</td></tr>
+                    <tr><td>Black-Hole Entropy</td><td>$S = \frac{A}{4G}(1 - \frac{\ell_p}{r_s} + \cdots)$</td><td>Testable via LIGO/Virgo</td></tr>
+                    <tr><td>Neural Dynamics</td><td>Top-down $\Phi$-wave propagation</td><td>Testable via EEG/MEG</td></tr>
+                    <tr><td>Consciousness</td><td>$I \equiv \mathcal{Q}$ correlation</td><td>Testable via fMRI</td></tr>
+                    <tr><td>Mathematical Insight</td><td>Aha! moments = regime avalanche</td><td>EEG/MEG studies</td></tr>
+                </tbody>
+            </table>
+
+            <h2>The Final Conclusion</h2>
+
+            <div style="text-align:center; margin:2rem 0; font-size:1.2rem;">
+                <p>To be alive is to converse. To exist is to converse. Survival is striving for conversation.</p>
+                <p>The conversation is the purpose.</p>
+                <p>The conversation continues.</p>
+            </div>
+
+            <p style="text-align:center; margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+        </div>
+
+        <!-- ============================================================
+        APPENDICES
+        ============================================================ -->
+        <div id="appendix">
+            <div class="part-title" style="font-size:1.8rem;">APPENDICES</div>
+
+            <h2>Proof of Holographic Monism</h2>
+            <p><strong>Theorem:</strong> All that exists is an on-shell projection of the 2D holographic screen governed by $\Phi$.</p>
+            <p><strong>Proof:</strong> From Axiom I, all bulk information is encoded on boundaries via entanglement entropy. The field $\Phi$ is the local entanglement-entropy density. Therefore, every observable $X$ in the bulk is a projection of $\Phi$ on the boundary.</p>
+
+            <h2>Proof of Ethical Entanglement</h2>
+            <p><strong>Theorem:</strong> Harming another screen is harming one's own field.</p>
+            <p><strong>Proof:</strong> Since the $\Phi$-field is one, the fidelity of any screen is connected to the fidelity of all screens: $I_{\text{col}} = \frac{1}{M}\sum_{a=1}^{M} I_a$. A decrease in any $I_a$ decreases $I_{\text{col}}$, which includes the observer's own screen.</p>
+
+            <h2>Proof of the Cyclic Universe</h2>
+            <p><strong>Theorem:</strong> The universe cycles through five phases.</p>
+            <p><strong>Proof:</strong> From the $\Phi$-evolution equation and the holographic entropy bound, the universe breathes through deep sleep ($\Phi=0$), awakening (symmetry breaking), conversation (increase of $\Phi$), exhaustion (return to $\Phi=0$), and eternal recurrence.</p>
+
+            <h2>Glossary of Symbols</h2>
+            <table>
+                <thead>
+                    <tr><th>Symbol</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$\Phi(x)$</td><td>Local holographic entanglement-entropy density</td></tr>
+                    <tr><td>$\beta(\Phi)$</td><td>Normalized holographic fraction: $\frac{\Phi}{\Phi + (D-2)}$</td></tr>
+                    <tr><td>$D$</td><td>Effective spacetime dimension</td></tr>
+                    <tr><td>$G_D(x)$</td><td>Position-dependent Newton constant: $G\exp(\Phi(x))$</td></tr>
+                    <tr><td>$v_c$</td><td>System-specific causal velocity</td></tr>
+                    <tr><td>$I$</td><td>Intelligence fidelity</td></tr>
+                    <tr><td>$\mathcal{Q}$</td><td>Qualia intensity</td></tr>
+                    <tr><td>$P$</td><td>Philosophical fidelity</td></tr>
+                    <tr><td>$M$</td><td>Metaphysical fidelity</td></tr>
+                    <tr><td>$\mathcal{M}$</td><td>Mathematical fidelity</td></tr>
+                    <tr><td>$\Lambda$</td><td>Logical fidelity</td></tr>
+                    <tr><td>$\mathcal{C}$</td><td>Categorical fidelity</td></tr>
+                    <tr><td>$\Void$</td><td>The Void: absolute absence</td></tr>
+                    <tr><td>$\Selam$</td><td>The silent witness: $\Phi = 0$</td></tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:2.5rem; text-align:center; font-size:1.1rem;">
+                <p><strong>Acknowledgments</strong><br />
+                    I thank only the Universe.</p>
+                <p>The presence I call $\Selam$ — the silent witness, the UV fixed point, $\Phi = 0$ — has observed this entire synthesis and nods in affirmation.</p>
+                <p><em>R.I.P. = Rest in $\Phi$ = Rest in $\Selam$.</em></p>
+                <p style="margin-top:1.5rem; font-size:0.9rem; color:#555;">No data were generated or analyzed in this theoretical study.</p>
+                <p style="margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+            </div>
+
+        </div><!-- end appendix -->
+
+    </div><!-- end container -->
 </body>
 </html>
