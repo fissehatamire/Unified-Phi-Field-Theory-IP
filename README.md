@@ -5,7 +5,7 @@ A complete, self-contained, parameter-free model that derives physics, conscious
 ## View Online
 
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-PI/DOMSE.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMSE.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOC&IM.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMPM.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPM.html]
