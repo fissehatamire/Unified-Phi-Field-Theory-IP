@@ -1,27 +1,256 @@
 \documentclass[aps,prd,preprint,showkeys,11pt]{revtex4-2}
 
+% --- Standard and Essential Packages ---
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{bm}
 \usepackage{physics}
 \usepackage{braket}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
 
+\tcbuselibrary{skins,breakable}
+
+% --- Color Definitions ---
+\definecolor{axiomcolor}{RGB}{128,0,0}
+\definecolor{equationcolor}{RGB}{0,80,160}
+\definecolor{consciouscolor}{RGB}{128,0,128}
+\definecolor{intelligencecolor}{RGB}{0,128,64}
+\definecolor{unifiedcolor}{RGB}{160,80,0}
+\definecolor{predictioncolor}{RGB}{0,128,128}
+\definecolor{metaphysicalcolor}{RGB}{80,0,120}
+\definecolor{voidcolor}{RGB}{0,40,80}
+\definecolor{fieldcolor}{RGB}{0,100,60}
+\definecolor{philosophicalcolor}{RGB}{120,60,0}
+\definecolor{epistemologycolor}{RGB}{0,80,160}
+\definecolor{ethicscolor}{RGB}{0,120,80}
+\definecolor{aestheticscolor}{RGB}{160,0,80}
+\definecolor{logiccolor}{RGB}{80,0,120}
+\definecolor{keycolor}{RGB}{160,0,80}
+\definecolor{authenticitycolor}{RGB}{255,165,0}
+\definecolor{theoremcolor}{RGB}{0,120,80}
+\definecolor{corollarycolor}{RGB}{200,100,0}
+\definecolor{definitioncolor}{RGB}{0,80,160}
+\definecolor{proofcolor}{RGB}{100,100,100}
+\definecolor{eternalcolor}{RGB}{128,0,128}
+\definecolor{kundalinicolor}{RGB}{200,50,50}
+\definecolor{chakracolor}{RGB}{255,140,0}
+\definecolor{mathcolor}{RGB}{0,80,160}
+\definecolor{setcolor}{RGB}{128,0,128}
+\definecolor{logicolor}{RGB}{0,120,80}
+\definecolor{catcolor}{RGB}{160,80,0}
+\definecolor{numbercolor}{RGB}{200,100,0}
+\definecolor{proofcolor}{RGB}{0,100,150}
+
+% --- Hyperref Setup ---
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    citecolor=blue,
-    urlcolor=blue,
-    pdfborder={0 0 0}
+    linkcolor=equationcolor,
+    citecolor=equationcolor,
+    urlcolor=equationcolor
 }
+
+% --- Custom Commands ---
+\newcommand{\PhiField}{\Phi}
+\newcommand{\betafunc}{\beta}
+\newcommand{\gammaexp}{\gamma}
+\newcommand{\lag}{\mathcal{L}}
+\newcommand{\action}{\mathcal{S}}
+\newcommand{\Rscalar}{R}
+\newcommand{\Gnewton}{G}
+\newcommand{\qualia}{\mathcal{Q}}
+\newcommand{\intelligence}{I}
+\newcommand{\philfidelity}{P}
+\newcommand{\metafidelity}{M}
+\newcommand{\mathfidelity}{\mathcal{M}}
+\newcommand{\logfidelity}{\Lambda}
+\newcommand{\catfidelity}{\mathcal{C}}
+\newcommand{\ellp}{\ell'_p}
+\newcommand{\mp}{m'_p}
+\newcommand{\tp}{t'_p}
+\newcommand{\Void}{\mathcal{V}}
+\newcommand{\Field}{\Phi}
+\newcommand{\Selam}{\mathcal{S}}
+\newcommand{\OmniNihil}{\mathcal{O}\mathcal{N}}
+\newcommand{\sign}{\operatorname{sign}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\squarei}{\square_{i}}
+\newcommand{\sets}{\mathbf{Set}}
+\newcommand{\cat}{\mathbf{Cat}}
+\newcommand{\topos}{\mathbf{Topos}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Hilb}{\mathcal{H}}
+
+% --- TColorBox Environments ---
+\newtcolorbox{axiombox}{
+    colback=white,
+    colframe=axiomcolor,
+    coltitle=white,
+    title={\textbf{FOUNDATIONAL AXIOM}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{masterbox}{
+    colback=white,
+    colframe=equationcolor,
+    coltitle=white,
+    title={\textbf{MASTER $\Phi$-SCALING EQUATION}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{consciousnessbox}{
+    colback=white,
+    colframe=consciouscolor,
+    coltitle=white,
+    title={\textbf{CONSCIOUSNESS MODEL}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{intelligencebox}{
+    colback=white,
+    colframe=intelligencecolor,
+    coltitle=white,
+    title={\textbf{INTELLIGENCE MODEL}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{metaphysicalbox}{
+    colback=white,
+    colframe=metaphysicalcolor,
+    coltitle=white,
+    title={\textbf{METAPHYSICAL PRINCIPLE}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{unifiedbox}{
+    colback=white,
+    colframe=unifiedcolor,
+    coltitle=white,
+    title={\textbf{THE UNIFIED OBSERVABLE}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{predictionbox}{
+    colback=white,
+    colframe=predictioncolor,
+    coltitle=white,
+    title={\textbf{TESTABLE PREDICTION}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{theorembox}{
+    colback=white,
+    colframe=theoremcolor,
+    coltitle=white,
+    title={\textbf{THEOREM}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{conclusionbox}{
+    colback=white,
+    colframe=eternalcolor,
+    coltitle=white,
+    title={\textbf{FINAL CONCLUSION}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\newtcolorbox{kundalinibox}{
+    colback=white,
+    colframe=kundalinicolor,
+    coltitle=white,
+    title={\textbf{KUNDALINI AWAKENING}},
+    fonttitle=\bfseries\large,
+    sharp corners,
+    drop fuzzy shadow,
+    boxrule=1.5pt,
+    width=\textwidth,
+    before skip=1em,
+    after skip=1em,
+    center title
+}
+
+\begin{document}
 
 \title{The Unified $\Phi$-Field Theory: \\ A Complete Derivation of Physics, Consciousness, Metaphysics, Philosophy, Mathematics, Logic, and Category Theory from Two Axioms}
 \author{Fisseha Huluka}
 \author{Selam Tamire}
 \affiliation{Unaffiliated}
 \date{March 2026}
-
-\begin{document}
 
 \begin{abstract}
 We present the Unified $\Phi$-Field Theory (UPT), a complete, parameter-free framework that derives all of physics, consciousness, intelligence, metaphysics, philosophy, pure mathematics, logic, and category theory from exactly two first principles: (i) the holographic principle, identifying the scalar field $\Phi(x)$ as the local holographic entanglement-entropy density, yielding $G_D(x) = G\exp(\Phi(x))$; and (ii) local Weyl-scale invariance, forcing the unique normalized holographic fraction $\beta(\Phi) = \Phi/[\Phi + (D-2)]$. From these axioms alone, we derive the Master $\Phi$-Scaling Equation governing every observable:
@@ -48274,8 +48503,6 @@ The proof is complete.
 \boxed{\text{The conversation continues.}}
 \end{center}
 
-\appendix
-
 \section{Derivation of All Parameters in the Master Scaling Equation}
 \label{app:master-parameters-derivation}
 
@@ -48558,8 +48785,6 @@ The Master $\Phi$-Scaling Equation contains no free parameters. Every symbol is 
 \begin{center}
 \boxed{\text{The conversation continues.}}
 \end{center}
-
-\appendix
 
 \section{Explicit Cosmological Solutions (Detailed Derivations)}
 \label{app:cosmological-solutions}
@@ -48968,8 +49193,6 @@ Early-time behaviour & $H \to \infty$, $\Phi \to -\infty$, $G_{\rm eff} \to 0$ \
 \boxed{\text{The conversation continues.}}
 \end{center}
 
-\appendix
-
 \section{Path-Integral Formulation and Proof of Renormalizability}
 \label{app:path-integral-renormalizability}
 
@@ -49225,8 +49448,6 @@ No explicit cutoff, no new particles, and no free parameters are required. The t
 \begin{center}
 \boxed{\text{The conversation continues.}}
 \end{center}
-
-\appendix
 
 \section{Explicit Derivation of the Master Equation from Field Equations}
 \label{app:master-derivation}
@@ -49524,8 +49745,6 @@ The Master $\Phi$-Scaling Equation is not a phenomenological ansatz. It is the i
 \begin{center}
 \boxed{\text{The conversation continues.}}
 \end{center}
-
-\appendix
 
 \section{Complete List of Holographic Prefactors $C_X$ and Their Fixed Values}
 \label{app:prefactors-complete}
@@ -49881,8 +50100,6 @@ The holographic prefactors $C_X$ are not free parameters; they are uniquely dete
 \boxed{\text{The conversation continues.}}
 \end{center}
 
-\appendix
-
 \section{Proof that the Classical Infrared Limit Forces $D=4$}
 \label{app:dimension-proof}
 
@@ -50109,8 +50326,6 @@ This result is not an external input; it emerges uniquely from the self-consiste
 \begin{center}
 \boxed{\text{The conversation continues.}}
 \end{center}
-
-\appendix
 
 \section{Proof that the Ultraviolet Limit Forces Dimensional Reduction to $D=2$}
 \label{app:uv-dimension-proof}
@@ -50446,8 +50661,6 @@ The dimensional reduction to $D=2$ is a well-known phenomenon in quantum gravity
 \boxed{\text{The conversation continues.}}
 \end{center}
 
-\appendix
-
 \section{Explicit Loop Calculation of Quadratic Divergence Cancellation}
 \label{app:loop-calculation}
 
@@ -50668,8 +50881,6 @@ The explicit loop calculation demonstrates that the Unified $\Phi$-Field Theory 
 \begin{center}
 \boxed{\text{The conversation continues.}}
 \end{center}
-
-\appendix
 
 \section{Proof of the Infinite Eternal Cyclic Universe (Complete Derivation)}
 \label{app:infinite-eternal-proof}
@@ -51162,8 +51373,6 @@ This completes the proof of the infinite eternal cyclic universe. The conversati
 \boxed{\text{The conversation continues.}}
 \end{center}
 
-\appendix
-
 \section{Detailed Derivation of Kundalini Awakening Equations}
 \label{app:kundalini-derivation}
 
@@ -51616,8 +51825,6 @@ Kundalini awakening is a coherent $\Phi$-wave propagating through the 2D hologra
 \boxed{\text{The conversation continues.}}
 \end{center}
 
-\appendix
-
 \section{Glossary of All Symbols}
 \label{app:glossary}
 
@@ -51994,8 +52201,6 @@ $\Selam$ & The silent witness \\
 \begin{center}
 \boxed{\text{The conversation continues.}}
 \end{center}
-
-\appendix
 
 \section{Numerical Simulations of Regime Dynamics}
 \label{app:numerical-simulations}
