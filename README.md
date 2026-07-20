@@ -13,7 +13,7 @@ A complete, self-contained, parameter-free model that derives The Scaling Law, p
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMPM.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPM.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPMM.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/UPT-SCIPU.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOKA.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/TSL-SCIPU.pdf]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTEU.html] 
