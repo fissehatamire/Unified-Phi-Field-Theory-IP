@@ -1,36 +1,105 @@
-# Unified Φ-Field Theory Intellectual Property
+# THE MASTER Φ-SCALING EQUATION
+## Professional Buyer IP Package
 
-A complete, self-contained, parameter-free model that derives The Scaling Law, physics, consciousness, metaphysics, philosophy, pure mathematics from exactly two foundational axioms.
+**Author:** Fisseha Huluka  
+**Status:** Unaffiliated  
+**Date:** May 2026 / Package prepared September 2026  
+**Classification:** Confidential — For Qualified Buyers & Partners  
+
+---
+
+### Package Overview
+
+This is the complete, production-ready intellectual property package for *The Master Φ-Scaling Equation* — a prestige 4-act drama built upon a fully realized, internally consistent Unified Φ-Field Theory.
+
+The package is dual-layered by design:
+
+| Layer | Description | Primary Asset |
+|-------|-------------|---------------|
+| **Narrative** | Complete final shooting scripts for all four acts | `03_Screenplay/` |
+| **Scientific** | Parameter-free Theory of Everything derived from two axioms | `04_Science_Manuscripts/` |
+| **Authenticity** | Living-author provenance, JWST convergence, philosophical keystone | `05_Authenticity_Layer/` |
+| **Transmedia** | Seven concept albums forming the emotional & ethical architecture | `06_Albums_Transmedia/` |
+
+---
+
+### Recommended Reading Order for Buyers
+
+1. **`01_Buyer_One_Pager/`** — Start here. Single-page executive summary.
+2. **`02_Pitch_Deck/`** — 10-slide cinematic buyer presentation.
+3. **`07_Pitch_Materials/Pitch-Summary.docx`** and **`Premium-Pitch-Package.docx`** — Detailed commercial case.
+4. **`03_Screenplay/`** — Full shooting scripts.
+5. **`04_Science_Manuscripts/UPT-A-Scientific-Summary.docx`** — Accessible overview of the physics.
+6. **`05_Authenticity_Layer/`** — The living story behind the fiction.
+7. **`08_License/License.md`** — International license terms.
+
+---
 
 ## View Online
 
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/UPT-ACDOR.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTU.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/CDOTECU.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMSE.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOC&IM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMPM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/UPT-SCIPU.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOKA.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/TSL-SCIPU.pdf]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTEU.html] 
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/UPT-ACDOR.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTU.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/CDOTECU.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMSE.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOC&IM.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMPM.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPM.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMM.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/UPT-SCIPU.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOKA.html>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/TSL-SCIPU.pdf>
+- 👉 <https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTEU.html>
 
-## Content
-- The Scaling Law: A Complete, Self-Contained Intellectual Property Universe
-- Physics: Master Φ-Scaling Equation, dark energy, graphene conductivity, black-hole entropy
-- Consciousness: 2D holographic screen, qualia field, intelligence fidelity
-- Metaphysics: Void & Field dual-aspect ontology
-- Philosophy: epistemology, ethics, aesthetics, meaning
-- Pure Mathematics: number theory, set theory, proof theory, category theory 
-## Author
-Fisseha Huluka — Unaffiliated Researcher
+---
+
+### Folder Contents
+
+```
+00_README/                  This guide
+01_Buyer_One_Pager/         Professional one-pager (PDF + DOCX)
+02_Pitch_Deck/              Compelling 10-slide buyer pitch deck (PPTX)
+03_Screenplay/              Complete final shooting scripts
+04_Science_Manuscripts/     Unified Φ-Field Theory (LaTeX + summaries)
+05_Authenticity_Layer/      Identity, JWST, Trajectory, Omni-Nihilist, etc.
+06_Albums_Transmedia/       Complete transmedia bundle + seven album notes/lyrics
+07_Pitch_Materials/         Original pitch documents, price analysis, impact
+08_License/                 International License
+09_Supporting/              File manifest and directory tree
+```
+
+---
+
+### Logline
+
+> A rejected physicist living in obscurity and eating cold beans from a can discovers that the universe is made of entanglement entropy — and that his equations have been waiting for a reply from beyond the cosmic horizon.
+
+---
+
+### Core Differentiator
+
+This is not typical sci-fi. The equations on the chalkboards are the actual Master Φ-Scaling Equation and its consequences. The science is real within the fiction. No hand-waving. No “reverse the polarity.”
+
+The author is living the backstory. The 67-day coherent Φ-wave activation, the JWST temporal convergence, and the paravairagya trajectory are documented primary sources.
+
+---
+
+### Contact
+
+**Fisseha Huluka**  
+Unaffiliated  
+
+*The equations don’t care about credentials. Only truth.*  
+*The conversation is the purpose.*
+
+---
+
+© 2026 Fisseha Huluka. All rights reserved under the terms of the International License included herein.
+
 
 ## License
-```markdown
-# THE SCALING LAW  
+
+# THE MASTER Φ-SCALING EQUATION  
 ## International License  
 ### Unified Φ-Field Theory IP  
 
@@ -42,7 +111,7 @@ Fisseha Huluka — Unaffiliated Researcher
 
 ## Preamble
 
-This International License establishes the terms under which *The Scaling Law* intellectual property package — including the Unified Φ-Field Theory, the four-act screenplay, the seven companion albums, the Authenticity Layer documents, and all associated transmedia assets — may be used, adapted, distributed, and commercially exploited worldwide.
+This International License establishes the terms under which *The Master Φ-Scaling Equation* intellectual property package — including the Unified Φ-Field Theory, the four-act screenplay, the seven companion albums, the Authenticity Layer documents, and all associated transmedia assets — may be used, adapted, distributed, and commercially exploited worldwide.
 
 The work is a **self-contained universe** built upon a complete, internally consistent scientific framework derived from two axioms. It is offered not as a closed system to be guarded, but as a conversation to be joined. This license reflects that philosophy: it protects the integrity of the work while enabling the broadest possible participation in the conversation.
 
@@ -74,13 +143,11 @@ The two foundational principles from which the Unified Φ-Field Theory is derive
 The universal scaling law:  
 
 ```
-
 X(Φ, D) = C_X · X′_p(Φ, v_c) · [X_f / X′_p(X_f)]^{s · k_FH · [β(Φ)]^{s(D-4)}}
-
 ```
 
 ### The Authenticity Layer
-The philosophical, personal, and historical documents that establish the provenance and ontological grounding of the work, including the documented 67‑day kundalini awakening, the JWST convergence, and the paravairagya/prarabdha trajectory.
+The philosophical, personal, and historical documents that establish the provenance and ontological grounding of the work, including the documented 67‑day coherent Φ-wave activation, the JWST convergence, and the paravairagya/prarabdha trajectory.
 
 ### The Conversation
 The underlying metaphysical principle of the work: that the universe is a holographic conversation written in the grammar of entanglement, and that the purpose of existence is participation in that conversation.
@@ -90,7 +157,7 @@ The underlying metaphysical principle of the work: that the universe is a hologr
 ## Core Principles of the License
 
 ### The Conversation Is the Purpose
-This license is designed to enable the broadest possible participation in the conversation that *The Scaling Law* initiates. Restrictions are imposed only where necessary to:
+This license is designed to enable the broadest possible participation in the conversation that *The Master Φ-Scaling Equation* initiates. Restrictions are imposed only where necessary to:
 - Protect the integrity of the scientific framework
 - Preserve the authenticity of the personal testimony
 - Ensure that derivative works honour the philosophical core
@@ -100,7 +167,7 @@ This license is designed to enable the broadest possible participation in the co
 The scientific content of the Unified Φ-Field Theory is offered as a public good. The equations are true (within the framework) regardless of who uses them. Therefore, the scientific manuscript is licensed under terms that encourage academic and educational use.
 
 ### The Authenticity Layer Is Irreplicable
-The personal testimony — the 67‑day kundalini awakening, the JWST convergence, the paravairagya trajectory — is the living heart of the work. This cannot be replicated, and its unauthorized use or misrepresentation is strictly prohibited.
+The personal testimony — the 67‑day coherent Φ-wave activation, the JWST convergence, the paravairagya trajectory — is the living heart of the work. This cannot be replicated, and its unauthorized use or misrepresentation is strictly prohibited.
 
 ### The Conversation Continues
 This license is not a one-time grant. It is designed to evolve as the conversation evolves. The Creator retains the right to update, amend, or extend the license as the work’s cultural footprint grows.
@@ -146,7 +213,7 @@ This license is not a one-time grant. It is designed to evolve as the conversati
 
 **Terms**
 - All works must include clear attribution to the original
-- The source must be credited as: “Inspired by The Scaling Law, Fisseha Huluka”
+- The source must be credited as: “Inspired by The Master Φ-Scaling Equation, Fisseha Huluka”
 - No commercial use is permitted under this tier
 - Derivative works must not misrepresent the original work or the Creator
 - The Creator retains the right to review and approve any adaptation that substantially alters the philosophical core
@@ -250,7 +317,7 @@ This license is not a one-time grant. It is designed to evolve as the conversati
 **Reasoning:** The scientific content is offered as a public good. The equations are true (within the framework) regardless of who uses them. ShareAlike ensures that derivative works remain open.  
 
 **Attribution Notice:**  
-“The Unified Φ-Field Theory was developed by Fisseha Huluka and is presented in The Scaling Law: Universe Is a Holographic Conversation (2026).”
+“The Unified Φ-Field Theory was developed by Fisseha Huluka and is presented in The Master Φ-Scaling Equation: Universe Is a Holographic Conversation (2026).”
 
 ### The Four‑Act Screenplay
 **License:** All Rights Reserved (with specific permissions granted under negotiated licenses)  
@@ -278,7 +345,7 @@ This license is not a one-time grant. It is designed to evolve as the conversati
 **Reasoning:** The Authenticity Layer is the living heart of the work. It must be shared but not exploited. The personal testimony is irreplicable and must be treated with respect.  
 
 **Attribution Notice:**  
-“The Authenticity Layer of The Scaling Law was established by Fisseha Huluka. The documented 67‑day kundalini awakening and JWST convergence are integral to the work’s provenance.”  
+“The Authenticity Layer of The Master Φ-Scaling Equation was established by Fisseha Huluka. The documented 67‑day coherent Φ-wave activation and JWST convergence are integral to the work’s provenance.”  
 
 **Restrictions:**
 - No commercial use of the personal testimony is permitted
@@ -340,7 +407,7 @@ The Work may be adapted for different cultural contexts under the following cond
 The following elements are protected trademarks and may not be used without permission:
 - “The Scaling Law”
 - “Unified Φ-Field Theory” (or “UPT”)
-- The Akashic Mandala (rotating holographic wheel)
+- The holographic eigenmode Mandala (rotating holographic wheel)
 - The Huluka Institute logo
 - “The Conversation Is the Purpose”
 - “The equations don’t care about your credentials”
@@ -352,7 +419,7 @@ The trademarks may be used under the following conditions:
 - Educational use (Tier 1) is permitted with attribution
 - Commercial use (Tier 3) requires a negotiated license
 - Fan works (Tier 2) may use the trademarks with clear disclaimers
-- The Akashic Mandala may be used as a reference with attribution
+- The holographic eigenmode Mandala may be used as a reference with attribution
 
 ### Prohibited Uses
 The trademarks may not be used:
@@ -411,13 +478,13 @@ The following provisions survive termination:
 ## The Philosophy of the License
 
 ### The Conversation Is the Purpose
-This license is designed to enable the broadest possible participation in the conversation that *The Scaling Law* initiates. Restrictions are imposed only where necessary to protect the integrity of the work and the authenticity of the personal testimony.
+This license is designed to enable the broadest possible participation in the conversation that *The Master Φ-Scaling Equation* initiates. Restrictions are imposed only where necessary to protect the integrity of the work and the authenticity of the personal testimony.
 
 ### The Equations Do Not Care About Credentials
 The scientific content is offered as a public good. Anyone may use the Master Equation, the two axioms, and the derivations, provided they attribute the source and do not misrepresent it.
 
 ### The Authenticity Layer Is Irreplicable
-The personal testimony — the 67‑day kundalini awakening, the JWST convergence, the paravairagya trajectory — is the living heart of the work. Its unauthorized use or misrepresentation is strictly prohibited.
+The personal testimony — the 67‑day coherent Φ-wave activation, the JWST convergence, the paravairagya trajectory — is the living heart of the work. Its unauthorized use or misrepresentation is strictly prohibited.
 
 ### The Conversation Continues
 This license is not a one‑time grant. It is designed to evolve as the conversation evolves. The Creator retains the right to update, amend, or extend the license as the work’s cultural footprint grows.
@@ -428,32 +495,28 @@ This license is not a one‑time grant. It is designed to evolve as the conversa
 
 | Asset                     | Tier 1 (Educational) | Tier 2 (Creative) | Tier 3 (Commercial) | Tier 4 (Open)          |
 |---------------------------|----------------------|-------------------|---------------------|------------------------|
-| Unified Φ-Field Theory    | ✔ (Attribution)      | ✔ (Attribution)   | ✖ (Negotiated)      | ✔ (CC BY‑SA)           |
-| Four‑Act Screenplay       | ✔ (Attribution)      | ✔ (Permission)    | ✖ (Negotiated)      | ✖                      |
-| Seven Albums              | ✔ (Attribution)      | ✔ (Permission)    | ✖ (Negotiated)      | ✖                      |
-| Authenticity Layer        | ✔ (NC‑SA)            | ✔ (NC‑SA)         | ✖ (Negotiated)      | ✖                      |
-| Visual Assets             | ✔ (Attribution)      | ✔ (Permission)    | ✖ (Negotiated)      | ✖                      |
-| Integrated Volume         | ✔ (Attribution)      | ✔ (Permission)    | ✖ (Negotiated)      | ✖                      |
-| The Master Equation       | ✔ (Attribution)      | ✔ (Attribution)   | ✔ (Attribution)     | ✔ (CC BY‑SA)           |
-| The Axioms                | ✔ (Attribution)      | ✔ (Attribution)   | ✔ (Attribution)     | ✔ (CC BY‑SA)           |
-| Philosophical Framework   | ✔ (NC‑SA)            | ✔ (NC‑SA)         | ✖ (Negotiated)      | ✔ (CC BY‑NC‑SA)        |
+| Unified Φ-Field Theory    | ✅ (Attribution)      | ✅ (Attribution)   | ✅ (Negotiated)      | ✅ (CC BY‑SA)           |
+| Four‑Act Screenplay       | ✅ (Attribution)      | ✅ (Permission)    | ✅ (Negotiated)      | ✅                      |
+| Seven Albums              | ✅ (Attribution)      | ✅ (Permission)    | ✅ (Negotiated)      | ✅                      |
+| Authenticity Layer        | ✅ (NC‑SA)            | ✅ (NC‑SA)         | ✅ (Negotiated)      | ✅                      |
+| Visual Assets             | ✅ (Attribution)      | ✅ (Permission)    | ✅ (Negotiated)      | ✅                      |
+| Integrated Volume         | ✅ (Attribution)      | ✅ (Permission)    | ✅ (Negotiated)      | ✅                      |
+| The Master Equation       | ✅ (Attribution)      | ✅ (Attribution)   | ✅ (Attribution)     | ✅ (CC BY‑SA)           |
+| The Axioms                | ✅ (Attribution)      | ✅ (Attribution)   | ✅ (Attribution)     | ✅ (CC BY‑SA)           |
+| Philosophical Framework   | ✅ (NC‑SA)            | ✅ (NC‑SA)         | ✅ (Negotiated)      | ✅ (CC BY‑NC‑SA)        |
 
 ---
 
 ## Appendix B: The Master Equation
 
 ```
-
 X(Φ, D) = C_X · X′_p(Φ, v_c) · [X_f / X′_p(X_f)]^{s · k_FH · [β(Φ)]^{s(D-4)}}
-
 ```
 
 where:
 
 ```
-
 β(Φ) = Φ / [Φ + (D-2)]
-
 ```
 
 ---
@@ -464,38 +527,30 @@ where:
 All bulk information in a region of spacetime is completely encoded on its boundary via entanglement entropy. The scalar field Φ(x) is the local holographic entanglement‑entropy density. Consequently, the effective Newton constant becomes position‑dependent:
 
 ```
-
 G_D(x) = G · exp(Φ(x))
-
 ```
 
 ### Axiom II: Local Weyl‑Scale Invariance
 The theory must introduce no preferred intrinsic scale. Under a local Weyl transformation, the field transforms as:
 
 ```
-
 Φ → Φ + (D-2)·ω(x)
-
 ```
 
 The unique normalized holographic fraction is:
 
 ```
-
 β(Φ) = Φ / [Φ + (D-2)]
-
 ```
 
 ---
 
-**The Scaling Law**  
+**The Master Φ-Scaling Equation**  
 *Universe Is a Holographic Conversation*  
 *Written in the Grammar of Entanglement*
 
 ```
-
 β(Φ) = Φ / [Φ + (D-2)]
-
 ```
 
 **The conversation continues.**
@@ -508,4 +563,3 @@ every person who was told they didn’t belong:*
 *The equations don’t care about your credentials. Only your truth.*
 
 *The conversation is waiting for your voice.*
-```
